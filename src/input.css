@@ -1,31 +1,31 @@
 @font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("../assets/fonts/plus-jakarta-sans-400.woff2") format("woff2");
+  font-family: "Fira Code";
+  src: url("../assets/fonts/fira-code-latin-400-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("../assets/fonts/plus-jakarta-sans-600.woff2") format("woff2");
+  font-family: "Fira Code";
+  src: url("../assets/fonts/fira-code-latin-600-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("../assets/fonts/plus-jakarta-sans-800.woff2") format("woff2");
+  font-family: "Fira Code";
+  src: url("../assets/fonts/fira-code-latin-700-normal.woff2") format("woff2");
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   font-display: swap;
 }
 
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Fira Code", ui-monospace, monospace;
   --color-base: #1e1e2e;
   --color-mantle: #181825;
   --color-crust: #11111b;
@@ -43,4 +43,78 @@
   --color-peach: #fab387;
   --color-mauve: #cba6f7;
   --color-pink: #f5c2e7;
+}
+
+@layer utilities {
+  @keyframes typing {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+      clip-path: inset(0 10% 0 0);
+    }
+  }
+
+  @keyframes blink {
+
+    0%,
+    49% {
+      border-right-color: rgb(180, 190, 254);
+    }
+
+    50%,
+    100% {
+      border-right-color: transparent;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes typingConnect {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+      clip-path: inset(0 8% 0 0);
+    }
+  }
+
+  .typing {
+    display: inline-block;
+    vertical-align: text-top;
+    white-space: nowrap;
+    padding-right: 4px;
+    line-height: inherit;
+  }
+
+  .typing-whoami {
+    animation: typing 2s steps(6, end) forwards;
+  }
+
+  .typing-connect {
+    animation: typingConnect 2s steps(7, end) forwards;
+    animation-delay: 2.5s;
+  }
+
+  .fade-in-after-typing {
+    animation: fadeIn 0.2s ease-in forwards;
+    animation-delay: 2.5s;
+    opacity: 0;
+  }
+
+  .fade-in-after-typing2 {
+    animation: fadeIn 0.2s ease-in forwards;
+    animation-delay: 5s;
+    opacity: 0;
+  }
 }
