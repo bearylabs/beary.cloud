@@ -91,7 +91,7 @@
 
   .typing {
     display: inline-block;
-    vertical-align: text-top;
+    /* vertical-align: text-top; */
     white-space: nowrap;
     padding-right: 4px;
     line-height: inherit;
